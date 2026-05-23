@@ -1,383 +1,344 @@
-export default function LuminaLandingPage() {
-  return (
-    <div className="min-h-screen bg-[#0B1020] text-white font-sans">
-      {/* NAVBAR */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0B1020]/80 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-500 text-xl font-bold shadow-lg shadow-violet-500/30">
-              L
-            </div>
-            <div>
-              <h1 className="text-xl font-bold tracking-wide">Lumina</h1>
-              <p className="text-xs text-white/60">Az érettségi edzőterme.</p>
-            </div>
-          </div>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina — Az érettségi edzőterme.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0B1020;
+    }
 
-          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-            <a href="#features" className="transition hover:text-white">
-              Funkciók
-            </a>
-            <a href="#ai" className="transition hover:text-white">
-              AI Tutor
-            </a>
-            <a href="#teachers" className="transition hover:text-white">
-              Tanároknak
-            </a>
-            <a href="#english" className="transition hover:text-white">
-              English
-            </a>
-          </nav>
+    .glow {
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.35);
+    }
 
-          <button className="rounded-2xl bg-violet-500 px-5 py-2 text-sm font-semibold transition hover:scale-105 hover:bg-violet-400">
-            Early Access
-          </button>
-        </div>
-      </header>
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+    }
+  </style>
+</head>
+<body class="text-white">
 
-      {/* HERO */}
-      <section className="relative overflow-hidden px-6 py-24">
-        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-violet-500/20 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/10 px-4 py-2 text-sm text-violet-200">
-              ⚡ XP-alapú tanulás középiskolásoknak
-            </div>
-
-            <h1 className="mb-6 text-5xl font-black leading-tight md:text-7xl">
-              A tanulás végre
-              <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">
-                {" "}játéknak érződik.
-              </span>
-            </h1>
-
-            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
-              A Lumina egy gamifikált tanulási platform 9–12. osztályos diákoknak.
-              Küldetések, XP, streak-ek és AI tutor segítenek felkészülni az
-              érettségire — motiválóbb módon, mint valaha.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <button className="rounded-2xl bg-violet-500 px-8 py-4 text-lg font-bold shadow-xl shadow-violet-500/30 transition hover:scale-105 hover:bg-violet-400">
-                Próbáld ki
-              </button>
-
-              <button className="rounded-2xl border border-white/15 bg-white/5 px-8 py-4 text-lg font-semibold text-white/80 transition hover:bg-white/10 hover:text-white">
-                Nézd meg a demót
-              </button>
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/60">
-              <div>🔥 Daily streak</div>
-              <div>🏆 Achievementek</div>
-              <div>⚔️ Boss fight dolgozatok</div>
-              <div>📈 Ranglista</div>
-            </div>
-          </div>
-
-          {/* MOCKUP */}
-          <div className="relative">
-            <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
-              <div className="mb-6 flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-white/50">Mai küldetés</p>
-                  <h3 className="text-2xl font-bold">Másodfokú egyenletek</h3>
-                </div>
-                <div className="rounded-2xl bg-violet-500 px-4 py-2 font-bold">
-                  +250 XP
-                </div>
-              </div>
-
-              <div className="mb-6 rounded-3xl bg-[#141B34] p-5">
-                <div className="mb-3 flex items-center justify-between text-sm text-white/60">
-                  <span>Progress</span>
-                  <span>72%</span>
-                </div>
-                <div className="h-4 overflow-hidden rounded-full bg-white/10">
-                  <div className="h-full w-[72%] rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="rounded-2xl border border-green-400/20 bg-green-400/10 p-4">
-                  <div className="mb-1 text-sm text-green-300">Achievement Unlocked</div>
-                  <div className="font-semibold">7 napos streak 🔥</div>
-                </div>
-
-                <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
-                  <div className="mb-1 text-sm text-cyan-300">AI Mentor</div>
-                  <div className="text-white/80">
-                    „Úgy tűnik, a faktorizálás megy, de az egyenletrendezést még gyakorolni kell.”
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-[#141B34] p-4">
-                  <div className="mb-2 flex items-center justify-between">
-                    <span className="font-semibold">Osztály ranglista</span>
-                    <span className="text-sm text-white/50">Heti</span>
-                  </div>
-
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between rounded-xl bg-white/5 px-3 py-2">
-                      <span>#1 Anna</span>
-                      <span>4 920 XP</span>
-                    </div>
-                    <div className="flex justify-between rounded-xl bg-violet-500/20 px-3 py-2">
-                      <span>#2 Te</span>
-                      <span>4 210 XP</span>
-                    </div>
-                    <div className="flex justify-between rounded-xl bg-white/5 px-3 py-2">
-                      <span>#3 Dávid</span>
-                      <span>3 980 XP</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section id="features" className="px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-violet-300">
-              FUNKCIÓK
-            </p>
-            <h2 className="mb-6 text-4xl font-black md:text-5xl">
-              Nem csak tanulsz.
-              <br />
-              Fejlődsz.
-            </h2>
-            <p className="mx-auto max-w-3xl text-lg text-white/70">
-              A Lumina a középiskolás tanulást játékélménnyé alakítja.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                title: 'XP & Szintlépés',
-                text: 'Minden megoldott feladat XP-t ad. Fejlődj és unlockolj új kihívásokat.',
-                icon: '⚡',
-              },
-              {
-                title: 'Küldetések',
-                text: 'Napi és heti questek segítenek konzisztensen készülni az érettségire.',
-                icon: '🎯',
-              },
-              {
-                title: 'Boss Fightok',
-                text: 'Témazárók és próbaérettségik izgalmas challenge formában.',
-                icon: '⚔️',
-              },
-              {
-                title: 'Achievementek',
-                text: 'Gyűjts badge-eket, streak-eket és rekordokat.',
-                icon: '🏆',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-1 hover:border-violet-400/30 hover:bg-white/10"
-              >
-                <div className="mb-5 text-4xl">{item.icon}</div>
-                <h3 className="mb-3 text-2xl font-bold">{item.title}</h3>
-                <p className="leading-relaxed text-white/70">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AI */}
-      <section id="ai" className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
-          <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-300">
-              AI TUTOR
-            </p>
-
-            <h2 className="mb-6 text-4xl font-black md:text-5xl">
-              Egy mentor,
-              <br />
-              aki mindig veled van.
-            </h2>
-
-            <p className="mb-8 text-lg leading-relaxed text-white/70">
-              A Lumina AI nem csak válaszokat ad — megérti, hogyan tanulsz.
-              Egyszerűbben magyaráz, elemzi a hibáidat és személyre szabott
-              fejlődési útvonalat készít.
-            </p>
-
-            <div className="space-y-4">
-              {[
-                '📚 Egyszerűbb magyarázatok',
-                '🧠 Személyre szabott tanulási útvonal',
-                '📊 Hibák elemzése',
-                '🎓 Érettségi fókuszú felkészítés',
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white/80"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[32px] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-violet-500/10 p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-cyan-400/20 text-3xl">
-                ✨
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold">Lumina AI</h3>
-                <p className="text-white/60">Személyes tanulási guide</p>
-              </div>
-            </div>
-
-            <div className="space-y-4 text-white/80">
-              <div className="rounded-2xl bg-[#141B34] p-5">
-                „A történelem esszéid erősek, de az évszámok gyakorlása növelheti a pontszámod.”
-              </div>
-
-              <div className="rounded-2xl bg-[#141B34] p-5">
-                „A mai streak megtartásához még 1 küldetést kell teljesítened.”
-              </div>
-
-              <div className="rounded-2xl bg-[#141B34] p-5">
-                „A múlt heti hibák alapján ajánlok egy mini challenge-et.”
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TEACHERS */}
-      <section id="teachers" className="px-6 py-24">
-        <div className="mx-auto max-w-7xl rounded-[40px] border border-white/10 bg-white/5 p-10 md:p-16">
-          <div className="grid gap-16 lg:grid-cols-2">
-            <div>
-              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-violet-300">
-                TEACHER MODE
-              </p>
-
-              <h2 className="mb-6 text-4xl font-black md:text-5xl">
-                Nem csak diákoknak.
-              </h2>
-
-              <p className="text-lg leading-relaxed text-white/70">
-                A Lumina tanárok számára is modern eszközt ad: saját tesztek,
-                osztály challenge-ek, házi feladatok és statisztikák egyetlen
-                platformon.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                '📝 Saját tesztek',
-                '🏆 Osztály challenge-ek',
-                '📤 Házi feladat kiosztás',
-                '📊 Teljesítmény statisztikák',
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-[#141B34] p-6 text-lg font-semibold"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ENGLISH VERSION */}
-      <section id="english" className="border-t border-white/10 px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-300">
-              ENGLISH VERSION
-            </p>
-
-            <h2 className="mb-6 text-4xl font-black md:text-6xl">
-              The graduation gym.
-            </h2>
-
-            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-white/70">
-              Lumina is a gamified learning platform for high school students.
-              XP, quests, AI tutoring and competitive challenges transform
-              studying into progression.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: 'Gamified Learning',
-                text: 'Earn XP, level up, complete quests and maintain your streak.',
-              },
-              {
-                title: 'AI-Powered Tutor',
-                text: 'Personalized explanations, error analysis and adaptive learning paths.',
-              },
-              {
-                title: 'Teacher Tools',
-                text: 'Custom tests, classroom challenges and performance analytics.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8"
-              >
-                <h3 className="mb-4 text-2xl font-bold">{item.title}</h3>
-                <p className="leading-relaxed text-white/70">{item.text}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 rounded-[32px] border border-violet-400/20 bg-gradient-to-r from-violet-500/10 to-cyan-400/10 p-10 text-center">
-            <h3 className="mb-4 text-4xl font-black">
-              Learn. Progress. Level up.
-            </h3>
-
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-white/70">
-              Built for students. Designed for the next generation of education.
-            </p>
-
-            <button className="rounded-2xl bg-violet-500 px-8 py-4 text-lg font-bold transition hover:scale-105 hover:bg-violet-400">
-              Join the Waitlist
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-white/10 px-6 py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center text-sm text-white/50 md:flex-row">
-          <div>
-            © 2026 Lumina — Az érettségi edzőterme.
-          </div>
-
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white">
-              Instagram
-            </a>
-            <a href="#" className="hover:text-white">
-              TikTok
-            </a>
-            <a href="#" className="hover:text-white">
-              Discord
-            </a>
-          </div>
-        </div>
-      </footer>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0B1020]/80 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-2xl bg-violet-500 flex items-center justify-center font-black text-xl glow">
+        L
+      </div>
+      <div>
+        <h1 class="font-bold text-xl">Lumina</h1>
+        <p class="text-xs text-white/60">Az érettségi edzőterme.</p>
+      </div>
     </div>
-  )
-}
+
+    <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+      <a href="#features" class="hover:text-white transition">Funkciók</a>
+      <a href="#ai" class="hover:text-white transition">AI Tutor</a>
+      <a href="#teachers" class="hover:text-white transition">Tanároknak</a>
+      <a href="#english" class="hover:text-white transition">English</a>
+    </nav>
+
+    <button class="bg-violet-500 hover:bg-violet-400 transition px-5 py-2 rounded-2xl font-semibold glow">
+      Early Access
+    </button>
+  </div>
+</header>
+
+<section class="relative overflow-hidden px-6 py-24">
+  <div class="absolute top-0 left-0 w-96 h-96 rounded-full bg-violet-500/20 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-cyan-400/10 blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-400/30 bg-violet-400/10 text-violet-200 text-sm mb-6">
+        ⚡ XP-alapú tanulás középiskolásoknak
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+        A tanulás végre
+        <span class="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">
+          játéknak érződik.
+        </span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-2xl">
+        A Lumina egy gamifikált tanulási platform 9–12. osztályos diákoknak.
+        Küldetések, XP, streak-ek és AI tutor segítenek felkészülni az érettségire.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mb-10">
+        <button class="bg-violet-500 hover:bg-violet-400 transition px-8 py-4 rounded-2xl font-bold text-lg glow">
+          Próbáld ki
+        </button>
+
+        <button class="border border-white/15 bg-white/5 hover:bg-white/10 transition px-8 py-4 rounded-2xl font-semibold text-lg">
+          Nézd meg a demót
+        </button>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-sm text-white/60">
+        <div>🔥 Daily streak</div>
+        <div>🏆 Achievementek</div>
+        <div>⚔️ Boss fightok</div>
+        <div>📈 Ranglista</div>
+      </div>
+    </div>
+
+    <div class="glass border border-white/10 rounded-[32px] p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="text-sm text-white/50">Mai küldetés</p>
+          <h3 class="text-2xl font-bold">Másodfokú egyenletek</h3>
+        </div>
+
+        <div class="bg-violet-500 px-4 py-2 rounded-2xl font-bold">
+          +250 XP
+        </div>
+      </div>
+
+      <div class="bg-[#141B34] rounded-3xl p-5 mb-6">
+        <div class="flex justify-between text-sm text-white/60 mb-3">
+          <span>Progress</span>
+          <span>72%</span>
+        </div>
+
+        <div class="h-4 rounded-full bg-white/10 overflow-hidden">
+          <div class="h-full w-[72%] bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+
+        <div class="bg-green-400/10 border border-green-400/20 rounded-2xl p-4">
+          <div class="text-green-300 text-sm mb-1">Achievement Unlocked</div>
+          <div class="font-semibold">7 napos streak 🔥</div>
+        </div>
+
+        <div class="bg-cyan-400/10 border border-cyan-400/20 rounded-2xl p-4">
+          <div class="text-cyan-300 text-sm mb-1">AI Mentor</div>
+          <div class="text-white/80">
+            „Úgy tűnik, a faktorizálás megy, de az egyenletrendezést még gyakorolni kell.”
+          </div>
+        </div>
+
+        <div class="bg-[#141B34] border border-white/10 rounded-2xl p-4">
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold">Osztály ranglista</span>
+            <span class="text-sm text-white/50">Heti</span>
+          </div>
+
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between bg-white/5 rounded-xl px-3 py-2">
+              <span>#1 Anna</span>
+              <span>4920 XP</span>
+            </div>
+
+            <div class="flex justify-between bg-violet-500/20 rounded-xl px-3 py-2">
+              <span>#2 Te</span>
+              <span>4210 XP</span>
+            </div>
+
+            <div class="flex justify-between bg-white/5 rounded-xl px-3 py-2">
+              <span>#3 Dávid</span>
+              <span>3980 XP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="features" class="px-6 py-24">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="uppercase tracking-[0.3em] text-violet-300 text-sm mb-4">FUNKCIÓK</p>
+
+      <h2 class="text-4xl md:text-5xl font-black mb-6">
+        Nem csak tanulsz.<br>Fejlődsz.
+      </h2>
+
+      <p class="text-lg text-white/70">
+        A Lumina a középiskolás tanulást játékélménnyé alakítja.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <div class="text-4xl mb-5">⚡</div>
+        <h3 class="text-2xl font-bold mb-3">XP & Szintlépés</h3>
+        <p class="text-white/70">Minden megoldott feladat XP-t ad.</p>
+      </div>
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <div class="text-4xl mb-5">🎯</div>
+        <h3 class="text-2xl font-bold mb-3">Küldetések</h3>
+        <p class="text-white/70">Napi és heti challenge-ek az érettségire.</p>
+      </div>
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <div class="text-4xl mb-5">⚔️</div>
+        <h3 class="text-2xl font-bold mb-3">Boss Fightok</h3>
+        <p class="text-white/70">Dolgozatok és próbaérettségik gamer élményként.</p>
+      </div>
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <div class="text-4xl mb-5">🏆</div>
+        <h3 class="text-2xl font-bold mb-3">Achievementek</h3>
+        <p class="text-white/70">Badge-ek, rekordok és streak-ek.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="ai" class="px-6 py-24">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <p class="uppercase tracking-[0.3em] text-cyan-300 text-sm mb-4">AI TUTOR</p>
+
+      <h2 class="text-4xl md:text-5xl font-black mb-6">
+        Egy mentor,<br>aki mindig veled van.
+      </h2>
+
+      <p class="text-lg text-white/70 leading-relaxed mb-8">
+        A Lumina AI megérti, hogyan tanulsz, személyre szabott fejlődési útvonalat készít és segít az érettségire való felkészülésben.
+      </p>
+
+      <div class="space-y-4">
+        <div class="glass border border-white/10 rounded-2xl px-5 py-4">📚 Egyszerűbb magyarázatok</div>
+        <div class="glass border border-white/10 rounded-2xl px-5 py-4">🧠 Személyre szabott útvonal</div>
+        <div class="glass border border-white/10 rounded-2xl px-5 py-4">📊 Hibák elemzése</div>
+        <div class="glass border border-white/10 rounded-2xl px-5 py-4">🎓 Érettségi fókusz</div>
+      </div>
+    </div>
+
+    <div class="rounded-[32px] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-violet-500/10 p-8">
+      <h3 class="text-3xl font-black mb-6">✨ Lumina AI</h3>
+
+      <div class="space-y-4 text-white/80">
+        <div class="bg-[#141B34] rounded-2xl p-5">
+          „A történelem esszéid erősek, de az évszámokat még gyakorolni kell.”
+        </div>
+
+        <div class="bg-[#141B34] rounded-2xl p-5">
+          „A mai streak megtartásához még 1 küldetés kell.”
+        </div>
+
+        <div class="bg-[#141B34] rounded-2xl p-5">
+          „Ajánlok egy mini challenge-et a múlt heti hibáid alapján.”
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="teachers" class="px-6 py-24">
+  <div class="max-w-7xl mx-auto glass border border-white/10 rounded-[40px] p-10 md:p-16">
+
+    <div class="grid lg:grid-cols-2 gap-16">
+
+      <div>
+        <p class="uppercase tracking-[0.3em] text-violet-300 text-sm mb-4">
+          TEACHER MODE
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-black mb-6">
+          Nem csak diákoknak.
+        </h2>
+
+        <p class="text-lg text-white/70 leading-relaxed">
+          Saját tesztek, osztály challenge-ek, házi feladatok és teljesítmény statisztikák.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-[#141B34] rounded-2xl p-6 font-semibold">📝 Saját tesztek</div>
+        <div class="bg-[#141B34] rounded-2xl p-6 font-semibold">🏆 Osztály challenge-ek</div>
+        <div class="bg-[#141B34] rounded-2xl p-6 font-semibold">📤 Házi feladat kiosztás</div>
+        <div class="bg-[#141B34] rounded-2xl p-6 font-semibold">📊 Teljesítmény statisztikák</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="english" class="border-t border-white/10 px-6 py-24">
+  <div class="max-w-7xl mx-auto text-center">
+
+    <p class="uppercase tracking-[0.3em] text-cyan-300 text-sm mb-4">
+      ENGLISH VERSION
+    </p>
+
+    <h2 class="text-4xl md:text-6xl font-black mb-6">
+      The graduation gym.
+    </h2>
+
+    <p class="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed mb-16">
+      Lumina is a gamified learning platform for high school students.
+      XP, quests, AI tutoring and competitive challenges transform studying into progression.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <h3 class="text-2xl font-bold mb-4">Gamified Learning</h3>
+        <p class="text-white/70">Earn XP, level up and maintain your streak.</p>
+      </div>
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <h3 class="text-2xl font-bold mb-4">AI-Powered Tutor</h3>
+        <p class="text-white/70">Personalized explanations and adaptive learning paths.</p>
+      </div>
+
+      <div class="glass border border-white/10 rounded-3xl p-8">
+        <h3 class="text-2xl font-bold mb-4">Teacher Tools</h3>
+        <p class="text-white/70">Classroom challenges and analytics for teachers.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-16 bg-gradient-to-r from-violet-500/10 to-cyan-400/10 border border-violet-400/20 rounded-[32px] p-10">
+      <h3 class="text-4xl font-black mb-4">Learn. Progress. Level up.</h3>
+
+      <p class="text-lg text-white/70 mb-8">
+        Built for students. Designed for the future of education.
+      </p>
+
+      <button class="bg-violet-500 hover:bg-violet-400 transition px-8 py-4 rounded-2xl font-bold text-lg glow">
+        Join the Waitlist
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="border-t border-white/10 px-6 py-10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between text-sm text-white/50">
+    <div>© 2026 Lumina — Az érettségi edzőterme.</div>
+
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-white">Instagram</a>
+      <a href="#" class="hover:text-white">TikTok</a>
+      <a href="#" class="hover:text-white">Discord</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
