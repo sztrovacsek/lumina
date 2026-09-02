@@ -458,17 +458,41 @@
 
 <script>
   let currentSlideIndex = 0;
+  let autoRotateInterval = null;
+  let autoRotateTimer = null;
+
+  function startAutoRotate() {
+    autoRotateInterval = setInterval(() => {
+      currentSlideIndex++;
+      const slides = document.querySelectorAll('.carousel-slide');
+      if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+      }
+      updateCarousel();
+    }, 4000); // Rotate every 4 seconds
+  }
+
+  function resetAutoRotate() {
+    clearInterval(autoRotateInterval);
+    clearTimeout(autoRotateTimer);
+    autoRotateTimer = setTimeout(() => {
+      startAutoRotate();
+    }, 5000); // Resume auto-rotation after 5 seconds of no interaction
+  }
 
   function showAppPreview() {
     document.getElementById('appPreview').style.display = 'block';
     document.body.style.overflow = 'hidden';
     currentSlideIndex = 0;
     updateCarousel();
+    startAutoRotate();
   }
 
   function hideAppPreview() {
     document.getElementById('appPreview').style.display = 'none';
     document.body.style.overflow = 'auto';
+    clearInterval(autoRotateInterval);
+    clearTimeout(autoRotateTimer);
   }
 
   function changeSlide(n) {
@@ -481,11 +505,13 @@
       currentSlideIndex = slides.length - 1;
     }
     updateCarousel();
+    resetAutoRotate();
   }
 
   function currentSlide(n) {
     currentSlideIndex = n;
     updateCarousel();
+    resetAutoRotate();
   }
 
   function updateCarousel() {
